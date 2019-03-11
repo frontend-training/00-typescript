@@ -18,7 +18,9 @@ tsc index.ts
 
 You should have a file called `index.js` in your directory.
 
-For convinience, from now own run `tsc index.ts && node index.js`
+For comfort, from now own run
+
+`tsc index.ts && node index.js`
 
 ---
 
