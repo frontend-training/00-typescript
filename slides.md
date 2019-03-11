@@ -185,8 +185,7 @@ duck.cuack();
 
 # Interfaces
 
-One of TypeScript’s core principles is that type-checking focuses on the shape
-that values have.
+One of TypeScript’s core principles is that type-checking focuses on the shape that values have.
 
 This is sometimes called “duck typing” or “structural subtyping
 
@@ -238,9 +237,9 @@ Spread syntax allows an iterable such as an array expression or string to be exp
 
 ```javascript
 const salad: string[] = ['lettuce', 'tomato', 'onions'];
-const burger: string[] = ['meat', ...salad];
+const burger: string[] = ['meat', 'bread', ...salad];
 console.log(burger);
-// [ 'meat', 'lettuce', 'tomato', 'onions' ]
+// [ 'meat', 'bread', 'lettuce', 'tomato', 'onions' ]
 ```
 
 ---
@@ -255,4 +254,38 @@ console.log(extendedConfig);
 // { port: 9000, env: 'prod', path: '/' }
 ```
 
+This is the best thing since sliced 🍞 and will be super useful as we move forward.
+
 ---
+
+# Destructuing Assignment
+Is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+
+```javascript
+// from
+const port: number = config.port
+const env: string = config.env
+
+//to
+const {port, env} = config
+```
+
+---
+# Destructuring Assignment with Arrays
+
+```javascript
+const [meat, bread, ...vegan] = [
+  'meat',
+  'bread',
+  'lettuce',
+  'tomato',
+  'onions'
+];
+console.log(meat); // meat
+console.log(bread); // bread
+console.log(vegan); // [ 'lettuce', 'tomato', 'onions' ]
+```
+
+---
+
+# FIN / Questions?
