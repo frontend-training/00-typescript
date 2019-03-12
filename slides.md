@@ -290,4 +290,130 @@ console.log(vegan); // [ 'lettuce', 'tomato', 'onions' ]
 
 ---
 
+# Exports
+
+Any declaration can be exported by adding the export keyword.
+
+
+```javascript
+export const numberRegexp = /^[0-9]+$/;
+
+export class ZipCodeValidator {
+    isAcceptable(s: string) {
+        return s.length === 5 && numberRegexp.test(s);
+    }
+}
+// exports {numberRegexp: /^[0-9]+$/, ZipCodeValidator: class ZipCodeValidator}
+```
+
+---
+
+# Named Exports
+
+You don't have to be constrained by your implementation's naming conventions.\
+
+```javascript
+const numberRegexp = /^[0-9]+$/;
+
+class ZipCodeValidator {
+    isAcceptable(s: string): boolean => s.length === 5 && numberRegexp.test(s)
+}
+
+export {ZipCodeValidator as Validator}
+
+// this will export {Validator: class ZipCodeValidator}
+```
+
+---
+
+# Default Exports
+
+You don't have to be constrained by your implementation's naming conventions.\
+
+```javascript
+const numberRegexp = /^[0-9]+$/;
+
+export default class ZipCodeValidator {
+    isAcceptable(s: string) {
+        return s.length === 5 && numberRegexp.test(s);
+    }
+}
+
+// this will export the class ZipCodeValidator
+```
+
+---
+
+# Importing Modules
+
+Import a single export from a module
+
+```javascript
+import { ZipCodeValidator } from './validators';
+```
+
+---
+
+# Importing Modules
+
+Import a single export from a module
+
+```javascript
+import { ZipCodeValidator } from './validators';
+```
+
+Imports can also be renamed
+
+```javascript
+import { ZipCodeValidator as Validator } from './validators';
+```
+
+---
+
+# Importing Modules
+
+Import a single export from a module
+
+```javascript
+import { ZipCodeValidator } from './validators';
+```
+
+Imports can also be renamed
+
+```javascript
+import { ZipCodeValidator as Validator } from './validators';
+```
+
+Import the entire module into a single variable
+
+```javascript
+import Validator from './validators';
+
+```
+
+---
+
+# Importing Modules
+
+Import a single export from a module
+
+```javascript
+import { ZipCodeValidator } from './validators';
+```
+
+Imports can also be renamed
+
+```javascript
+import { ZipCodeValidator as Validator } from './validators';
+```
+
+Import the entire module into a single variable
+
+```javascript
+import Validator from './validators';
+
+```
+
+---
+
 # FIN / Questions?
