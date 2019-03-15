@@ -290,6 +290,42 @@ console.log(vegan); // [ 'lettuce', 'tomato', 'onions' ]
 
 ---
 
+# Object Shorthands
+
+Don't do this
+
+```javascript
+const obj = {a: a, b: b, c: c}; // 😢
+```
+
+Do this!
+
+```javascript
+const obj = {a, b, c}; // 😊
+```
+
+---
+
+# == vs ===
+
+Always use `===`, why?
+
+```js
+"0" == 0 // true
+null == undefined  // true
+```
+
+```js
+"0" === 0 // false
+null === undefined  // false
+```
+
+---
+
+![](https://i.imgur.com/Zs6cVyd.jpg)
+
+---
+
 # Exports
 
 Any declaration can be exported by adding the export keyword.
